@@ -5,7 +5,7 @@ window.TOWER_CONFIG = {
 
   // Your token's mint address. Leave empty to show "announced at launch"
   // and hide the live featured flight.
-  contractAddress: "",
+  contractAddress: "Guh8nFE7qDqnLKuPp6yfmu3hp2T48JrbMAVanB8qpump",
 
   // Social links. Empty strings are hidden. "#" is a placeholder link.
   links: {
