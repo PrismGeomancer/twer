@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="description" content="TOWER — the control tower for Solana. Paste a token contract and nine controllers return a verdict: cleared, held, diverted or mayday.">
+  <title>TOWER — Solana Control Tower</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./tower-base.css">
+  <link rel="stylesheet" href="./tower.css">
+  <style>
+    /* Intro overlay: inline so it styles on first paint, before any other CSS or the bundle loads. */
+    html,body{background:#0b0b0b}
+    html.tw-intro-on,html.tw-intro-on body{overflow:hidden}
+    #tw-intro{position:fixed;inset:0;z-index:99999;background:#0b0b0b;color:#fff;font-family:"Geist Mono",ui-monospace,monospace;will-change:transform}
+    #tw-intro.is-leaving{transform:translateY(-100%)!important;opacity:0;transition:transform .38s cubic-bezier(.7,0,.3,1),opacity .38s}
+    .tw-intro__scope{position:absolute;inset:0}
+    .tw-intro__radio{position:absolute;left:50%;bottom:21%;transform:translateX(-50%);width:min(560px,86vw);font-size:clamp(11px,1.6vw,14px);line-height:1.7;letter-spacing:.04em}
+    .tw-intro__radio p{margin:0;min-height:1.7em}
+    .tw-intro__radio i{margin-right:8px;font-style:normal;letter-spacing:.12em;color:#8a8a8a}
+    .tw-intro__radio .is-tower{color:#ff6a13}
+    .tw-intro__stamp{position:absolute;left:50%;top:43%;padding:10px 26px;border:4px solid #ff6a13;color:#ff6a13;background:rgba(11,11,11,.55);font:700 clamp(40px,8vw,84px)/1 "Barlow Condensed",Impact,sans-serif;letter-spacing:.08em;opacity:0}
+    .tw-intro__logo{position:absolute;left:50%;top:56%;width:min(420px,70vw);opacity:0}
+    .tw-intro__skip{position:absolute;top:20px;right:20px;padding:10px 14px;color:#fff;background:transparent;border:1px solid #ffffff47;font:500 11px/1 "Geist Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+    .tw-intro__skip:hover,.tw-intro__skip:focus-visible{border-color:#ff6a13;color:#ff6a13;outline:none}
+    .tw-intro__skip kbd{margin-left:6px;color:#8a8a8a;font:inherit}
+  </style>
+  <script src="./tower.config.js"></script>
+  <script type="module" src="./tower-app.js"></script>
+</head>
+<body>
+  <script src="./intro.js"></script>
+  <div id="root"></div>
+  <noscript>TOWER needs JavaScript to open the tower.</noscript>
+</body>
+</html>

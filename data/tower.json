@@ -1,0 +1,3760 @@
+{
+  "version": 1,
+  "mode": "archive",
+  "model": "TOWER / CONTROL ENGINE",
+  "now": 1791808800000,
+  "startedAt": 1791549600000,
+  "cycle": 42,
+  "agents": [
+    {
+      "id": "ground",
+      "codename": "GROUND",
+      "role": "Ground controller",
+      "mission": "Checks mint and freeze authority before anything is allowed to move.",
+      "tools": [
+        "Mint registry",
+        "Authority checks",
+        "Launch intake"
+      ],
+      "status": "searching",
+      "since": 1791808757000,
+      "missionId": "drain-lane",
+      "task": "Was liquidity pulled off the runway before the sell wave began?",
+      "lastThought": "Find the first independent signal in TWR-002: authority snapshot taken.",
+      "lastAction": "Find the first independent signal in TWR-002: authority snapshot taken.",
+      "stats": {
+        "tasks": 8,
+        "records": 128,
+        "searches": 12,
+        "reads": 18,
+        "findings": 2,
+        "tokensIn": 120000,
+        "tokensOut": 4800,
+        "costUsd": 0
+      }
+    },
+    {
+      "id": "clearance",
+      "codename": "CLEARANCE",
+      "role": "Clearance delivery",
+      "mission": "Weighs liquidity depth and decides whether a flight has room to leave.",
+      "tools": [
+        "Pool depth",
+        "Liquidity ledger",
+        "Slot queue"
+      ],
+      "status": "thinking",
+      "since": 1791808714000,
+      "missionId": "drain-lane",
+      "task": "Was liquidity pulled off the runway before the sell wave began?",
+      "lastThought": "The flight boundary is 2 liquidity pulls \u00b7 1 sell window. Set a clean comparison before testing intent.",
+      "lastAction": "The flight boundary is 2 liquidity pulls \u00b7 1 sell window. Set a clean comparison before testing intent.",
+      "stats": {
+        "tasks": 9,
+        "records": 140,
+        "searches": 15,
+        "reads": 22,
+        "findings": 2,
+        "tokensIn": 141000,
+        "tokensOut": 5600,
+        "costUsd": 0
+      }
+    },
+    {
+      "id": "approach",
+      "codename": "APPROACH",
+      "role": "Approach controller",
+      "mission": "Follows the age of a pair and how its first hours unfold.",
+      "tools": [
+        "Pair timeline",
+        "Funding paths",
+        "Cluster ledger"
+      ],
+      "status": "reading",
+      "since": 1791808671000,
+      "missionId": "drain-lane",
+      "task": "Was liquidity pulled off the runway before the sell wave began?",
+      "lastThought": "Trace authority record \u2192 liquidity account. Keep uncertain edges off the confirmed path.",
+      "lastAction": "Trace authority record \u2192 liquidity account. Keep uncertain edges off the confirmed path.",
+      "stats": {
+        "tasks": 10,
+        "records": 152,
+        "searches": 18,
+        "reads": 26,
+        "findings": 2,
+        "tokensIn": 162000,
+        "tokensOut": 6400,
+        "costUsd": 0
+      }
+    },
+    {
+      "id": "departure",
+      "codename": "DEPARTURE",
+      "role": "Departure controller",
+      "mission": "Follows holder concentration and the paths that leave a launch.",
+      "tools": [
+        "Holder map",
+        "Instruction traces",
+        "Route ledger"
+      ],
+      "status": "reading",
+      "since": 1791808628000,
+      "missionId": "drain-lane",
+      "task": "Was liquidity pulled off the runway before the sell wave began?",
+      "lastThought": "The first withdrawal marks the start of the drain interval.",
+      "lastAction": "The first withdrawal marks the start of the drain interval.",
+      "stats": {
+        "tasks": 11,
+        "records": 164,
+        "searches": 21,
+        "reads": 30,
+        "findings": 2,
+        "tokensIn": 183000,
+        "tokensOut": 7200,
+        "costUsd": 0
+      }
+    },
+    {
+      "id": "weather",
+      "codename": "WEATHER",
+      "role": "Weather officer",
+      "mission": "Reads volatility and tells rough conditions from rigged ones.",
+      "tools": [
+        "Volatility index",
+        "Baseline comparison",
+        "Storm log"
+      ],
+      "status": "thinking",
+      "since": 1791808585000,
+      "missionId": "pad-rush",
+      "task": "Why did 23 wallets request the same launch slot within an eight-second window?",
+      "lastThought": "Can the common route be explained by a shared funding service?",
+      "lastAction": "Can the common route be explained by a shared funding service?",
+      "stats": {
+        "tasks": 12,
+        "records": 176,
+        "searches": 24,
+        "reads": 34,
+        "findings": 2,
+        "tokensIn": 204000,
+        "tokensOut": 8000,
+        "costUsd": 0
+      }
+    },
+    {
+      "id": "fuel",
+      "codename": "FUEL",
+      "role": "Fuel controller",
+      "mission": "Watches priority fees and block space, the cost of getting off the ground.",
+      "tools": [
+        "Fee monitor",
+        "Priority-fee samples",
+        "Block space"
+      ],
+      "status": "reading",
+      "since": 1791808542000,
+      "missionId": "pad-rush",
+      "task": "Why did 23 wallets request the same launch slot within an eight-second window?",
+      "lastThought": "TWR-001 Held: The shared funding route is real. Common control is not established.",
+      "lastAction": "TWR-001 Held: The shared funding route is real. Common control is not established.",
+      "stats": {
+        "tasks": 13,
+        "records": 188,
+        "searches": 27,
+        "reads": 38,
+        "findings": 2,
+        "tokensIn": 225000,
+        "tokensOut": 8800,
+        "costUsd": 0
+      }
+    },
+    {
+      "id": "radar",
+      "codename": "RADAR",
+      "role": "Radar operator",
+      "mission": "Plots buy and sell flow on the scope and searches competing explanations.",
+      "tools": [
+        "Radar scope",
+        "Hypothesis search",
+        "Flow plot"
+      ],
+      "status": "thinking",
+      "since": 1791808499000,
+      "missionId": "pad-rush",
+      "task": "Why did 23 wallets request the same launch slot within an eight-second window?",
+      "lastThought": "TWR-001 best fit: Coordinated launch at 64%. Fit ranks explanations; it does not name an owner.",
+      "lastAction": "TWR-001 best fit: Coordinated launch at 64%. Fit ranks explanations; it does not name an owner.",
+      "stats": {
+        "tasks": 14,
+        "records": 200,
+        "searches": 30,
+        "reads": 42,
+        "findings": 2,
+        "tokensIn": 246000,
+        "tokensOut": 9600,
+        "costUsd": 0
+      }
+    },
+    {
+      "id": "emergency",
+      "codename": "EMERGENCY",
+      "role": "Emergency desk",
+      "mission": "Finds the strongest innocent explanation, then looks for the red line.",
+      "tools": [
+        "Counterexamples",
+        "Red-line list",
+        "Alternate paths"
+      ],
+      "status": "searching",
+      "since": 1791808456000,
+      "missionId": "pad-rush",
+      "task": "Why did 23 wallets request the same launch slot within an eight-second window?",
+      "lastThought": "Challenge TWR-001: Explains the common route without requiring a single owner.",
+      "lastAction": "Challenge TWR-001: Explains the common route without requiring a single owner.",
+      "stats": {
+        "tasks": 15,
+        "records": 212,
+        "searches": 33,
+        "reads": 46,
+        "findings": 2,
+        "tokensIn": 267000,
+        "tokensOut": 10400,
+        "costUsd": 0
+      }
+    },
+    {
+      "id": "chief",
+      "codename": "CHIEF",
+      "role": "Tower chief",
+      "mission": "Routes flights, hands them between controllers and signs the final verdict.",
+      "tools": [
+        "Flight scheduler",
+        "Verdict gate",
+        "Fee governor"
+      ],
+      "status": "thinking",
+      "since": 1791808413000,
+      "missionId": "drain-lane",
+      "task": "Was liquidity pulled off the runway before the sell wave began?",
+      "lastThought": "Open TWR-002 / The Drain Lane. Start with the sequence; keep the owner question separate.",
+      "lastAction": "Open TWR-002 / The Drain Lane. Start with the sequence; keep the owner question separate.",
+      "stats": {
+        "tasks": 16,
+        "records": 224,
+        "searches": 36,
+        "reads": 50,
+        "findings": 2,
+        "tokensIn": 288000,
+        "tokensOut": 11200,
+        "costUsd": 0
+      }
+    }
+  ],
+  "missions": [
+    {
+      "id": "pad-rush",
+      "title": "The Pad Rush",
+      "question": "Why did 23 wallets request the same launch slot within an eight-second window?",
+      "lead": "ground",
+      "support": [
+        "approach",
+        "emergency"
+      ],
+      "priority": 1,
+      "status": "cooldown",
+      "cycles": 7,
+      "findings": 2,
+      "lastRunAt": 1791808690000,
+      "lastSummary": "A common funding route links 17 wallets. Shared control remains an open question.",
+      "severity": "Held",
+      "confidence": 64,
+      "stage": "Reviewed"
+    },
+    {
+      "id": "drain-lane",
+      "title": "The Drain Lane",
+      "question": "Was liquidity pulled off the runway before the sell wave began?",
+      "lead": "clearance",
+      "support": [
+        "departure",
+        "fuel"
+      ],
+      "priority": 1,
+      "status": "active",
+      "cycles": 8,
+      "findings": 2,
+      "lastRunAt": 1791808580000,
+      "lastSummary": "Two pull paths precede the sell wave; the order matters more than the headline.",
+      "severity": "Mayday",
+      "confidence": 72,
+      "stage": "Reconstruction"
+    },
+    {
+      "id": "mirror-loop",
+      "title": "The Mirror Loop",
+      "question": "Are repeated swaps a bot loop, a routing artifact, or coordinated volume?",
+      "lead": "departure",
+      "support": [
+        "radar",
+        "clearance"
+      ],
+      "priority": 2,
+      "status": "queued",
+      "cycles": 9,
+      "findings": 2,
+      "lastRunAt": 1791808470000,
+      "lastSummary": "Repeated instruction paths are consistent with one retry loop. Intent is unresolved.",
+      "severity": "Diverted",
+      "confidence": 79,
+      "stage": "Queued"
+    },
+    {
+      "id": "silent-hangar",
+      "title": "The Silent Hangar",
+      "question": "Where does the cargo go after it crosses an intermediate account?",
+      "lead": "approach",
+      "support": [
+        "weather",
+        "fuel"
+      ],
+      "priority": 2,
+      "status": "queued",
+      "cycles": 10,
+      "findings": 2,
+      "lastRunAt": 1791808360000,
+      "lastSummary": "The second hop splits into three branches. One branch is still unattributed.",
+      "severity": "Held",
+      "confidence": 62,
+      "stage": "Queued"
+    },
+    {
+      "id": "clean-departure",
+      "title": "The Clean Departure",
+      "question": "Does the apparent early-entry signal survive a challenge against ordinary arbitrage?",
+      "lead": "emergency",
+      "support": [
+        "ground",
+        "radar"
+      ],
+      "priority": 3,
+      "status": "queued",
+      "cycles": 11,
+      "findings": 2,
+      "lastRunAt": 1791808250000,
+      "lastSummary": "A public signal explains the early entries. No red line has survived review.",
+      "severity": "Cleared",
+      "confidence": 81,
+      "stage": "Queued"
+    },
+    {
+      "id": "missed-approach",
+      "title": "The Missed Approach",
+      "question": "Which evidence would separate a deliberate exit from a failed automation?",
+      "lead": "weather",
+      "support": [
+        "fuel",
+        "chief"
+      ],
+      "priority": 3,
+      "status": "queued",
+      "cycles": 12,
+      "findings": 2,
+      "lastRunAt": 1791808140000,
+      "lastSummary": "Instruction order and authority changes are the decisive evidence, not price alone.",
+      "severity": "Diverted",
+      "confidence": 58,
+      "stage": "Queued"
+    }
+  ],
+  "findings": [
+    {
+      "id": "tw-note-001",
+      "ts": 1791808715000,
+      "missionId": "pad-rush",
+      "agent": "approach",
+      "title": "A shared route connects 17 wallets",
+      "summary": "The PAD log connects 17 of 23 wallets through one intermediate funding route. The other six reach the pad without that path. The scope supports a funding relationship; it does not name the person behind it.",
+      "confidence": "medium",
+      "verdict": "corrected",
+      "verifierNote": "Shared infrastructure remains plausible. Keep the cluster provisional.",
+      "sources": [
+        {
+          "title": "TWR / PAD-RUSH \u00b7 flight log",
+          "url": "case:pad-rush"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-002",
+      "ts": 1791808630000,
+      "missionId": "drain-lane",
+      "agent": "clearance",
+      "title": "The pull comes before the sell wave",
+      "summary": "The DRAIN timeline places two liquidity pulls ahead of the wider selling window. Reverse ordering would suggest a reactive exit; this ordering leaves pre-positioning as a question worth testing.",
+      "confidence": "medium",
+      "verdict": "confirmed",
+      "verifierNote": "Sequence accepted within the flight log. Intent requires independent evidence.",
+      "sources": [
+        {
+          "title": "TWR / DRAIN-LANE \u00b7 flight log",
+          "url": "case:drain-lane"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-003",
+      "ts": 1791808545000,
+      "missionId": "clean-departure",
+      "agent": "emergency",
+      "title": "Inside knowledge is not the only explanation",
+      "summary": "The earliest entries fit both a coordinated launch and an automated arbitrage response. A narrow window makes the activity unusual, but a public signal explains it without private information.",
+      "confidence": "medium",
+      "verdict": "confirmed",
+      "verifierNote": "The flight is cleared. Keep the private-link question on file.",
+      "sources": [
+        {
+          "title": "TWR / CLEAN-DEPARTURE \u00b7 flight log",
+          "url": "case:clean-departure"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-004",
+      "ts": 1791808460000,
+      "missionId": "mirror-loop",
+      "agent": "departure",
+      "title": "The swap pattern repeats an instruction path",
+      "summary": "The MIRROR ledger holds repeated route fingerprints with a matching retry boundary. That is consistent with a loop in the execution path. It does not establish deliberate volume inflation.",
+      "confidence": "medium",
+      "verdict": "corrected",
+      "verifierNote": "Replace the manipulation claim with the narrower instruction-pattern observation.",
+      "sources": [
+        {
+          "title": "TWR / MIRROR-LOOP \u00b7 flight log",
+          "url": "case:mirror-loop"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-005",
+      "ts": 1791808375000,
+      "missionId": "silent-hangar",
+      "agent": "approach",
+      "title": "Three branches leave the intermediate account",
+      "summary": "The HANGAR scope splits into three paths after the intermediate account. Two return to known wallets. The third has no supported owner link and stays outside the attributed cluster.",
+      "confidence": "medium",
+      "verdict": "confirmed",
+      "verifierNote": "The unknown branch stays visible. Do not fold it into the known cluster.",
+      "sources": [
+        {
+          "title": "TWR / SILENT-HANGAR \u00b7 flight log",
+          "url": "case:silent-hangar"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-006",
+      "ts": 1791808290000,
+      "missionId": "missed-approach",
+      "agent": "weather",
+      "title": "Authority history is the next decisive record",
+      "summary": "The MISSED APPROACH flight needs the sequence of authority changes and automation triggers. Price movement alone cannot tell an intentional exit from a failed execution policy.",
+      "confidence": "medium",
+      "verdict": "confirmed",
+      "verifierNote": "Evidence request approved. Keep motive open until the authority sequence arrives.",
+      "sources": [
+        {
+          "title": "TWR / MISSED-APPROACH \u00b7 flight log",
+          "url": "case:missed-approach"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-007",
+      "ts": 1791808205000,
+      "missionId": "pad-rush",
+      "agent": "ground",
+      "title": "The funding window is wider than the request window",
+      "summary": "The eight-second window is the headline. The earlier funding interval is the stronger lead, because it gives the tower a separate sequence to compare against.",
+      "confidence": "medium",
+      "verdict": "confirmed",
+      "verifierNote": "Keep request timing and funding timing as independent observations.",
+      "sources": [
+        {
+          "title": "TWR / PAD-RUSH \u00b7 flight log",
+          "url": "case:pad-rush"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-008",
+      "ts": 1791808120000,
+      "missionId": "drain-lane",
+      "agent": "fuel",
+      "title": "Observation and intent need different verdicts",
+      "summary": "The two pull records support a statement about order. They do not support a statement about intent. The flight log now keeps those claims apart so later evidence can update each one.",
+      "confidence": "medium",
+      "verdict": "corrected",
+      "verifierNote": "Attribution language narrowed. The sequence stays in the evidence strip.",
+      "sources": [
+        {
+          "title": "TWR / DRAIN-LANE \u00b7 flight log",
+          "url": "case:drain-lane"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-009",
+      "ts": 1791808035000,
+      "missionId": "mirror-loop",
+      "agent": "radar",
+      "title": "Three hypotheses survive the first plot",
+      "summary": "The scope keeps bot retry, route aggregation and deliberate repetition in play. Retry fits the instruction order best, while the other two need extra assumptions.",
+      "confidence": "medium",
+      "verdict": "confirmed",
+      "verifierNote": "A best fit is a working explanation, not a final attribution.",
+      "sources": [
+        {
+          "title": "TWR / MIRROR-LOOP \u00b7 flight log",
+          "url": "case:mirror-loop"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-010",
+      "ts": 1791807950000,
+      "missionId": "clean-departure",
+      "agent": "fuel",
+      "title": "Confidence rises once service overlap is counted",
+      "summary": "Treating a common service as common ownership artificially strengthens the cluster. The revised hypothesis counts service overlap and public timing as independent explanations.",
+      "confidence": "medium",
+      "verdict": "corrected",
+      "verifierNote": "The tower will not turn infrastructure overlap into a claim about identity.",
+      "sources": [
+        {
+          "title": "TWR / CLEAN-DEPARTURE \u00b7 flight log",
+          "url": "case:clean-departure"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-011",
+      "ts": 1791807865000,
+      "missionId": "silent-hangar",
+      "agent": "weather",
+      "title": "An unresolved path becomes an evidence request",
+      "summary": "The third branch is now a dedicated request, not an assumed link. The tower can proceed on the two supported branches without overstating the unknown one.",
+      "confidence": "medium",
+      "verdict": "confirmed",
+      "verifierNote": "Scope accepted. The unresolved branch stays on the board.",
+      "sources": [
+        {
+          "title": "TWR / SILENT-HANGAR \u00b7 flight log",
+          "url": "case:silent-hangar"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    },
+    {
+      "id": "tw-note-012",
+      "ts": 1791807780000,
+      "missionId": "missed-approach",
+      "agent": "chief",
+      "title": "A flight can stay open without losing its shape",
+      "summary": "The record keeps the observed sequence, the explanations still in play, and the exact evidence needed next. An open verdict is useful when its boundaries are clear.",
+      "confidence": "medium",
+      "verdict": "confirmed",
+      "verifierNote": "Protocol accepted: evidence, explanation, challenge, next question.",
+      "sources": [
+        {
+          "title": "TWR / MISSED-APPROACH \u00b7 flight log",
+          "url": "case:missed-approach"
+        },
+        {
+          "title": "Tower clearance protocol",
+          "url": "protocol:clearance"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "agent": "chief",
+      "kind": "handoff",
+      "text": "Open TWR-001 / The Pad Rush. Start with the sequence; keep the owner question separate.",
+      "missionId": "pad-rush",
+      "phase": "Tracing",
+      "delayMs": 11000,
+      "target": "ground",
+      "missionUpdate": {
+        "stage": "Tracing",
+        "status": "active",
+        "lastSummary": "Open TWR-001 / The Pad Rush. Start with the sequence; keep the owner question separate."
+      },
+      "id": 1000,
+      "ts": 1791808566000,
+      "replay": true
+    },
+    {
+      "agent": "ground",
+      "kind": "thinking",
+      "text": "The flight boundary is 23 wallets \u00b7 8-second request window. Set a clean comparison before testing intent.",
+      "missionId": "pad-rush",
+      "phase": "Tracing",
+      "delayMs": 13000,
+      "id": 1001,
+      "ts": 1791808579000,
+      "replay": true
+    },
+    {
+      "agent": "ground",
+      "kind": "search",
+      "text": "Find the first independent signal in TWR-001: a funding route appears.",
+      "missionId": "pad-rush",
+      "phase": "Tracing",
+      "delayMs": 15000,
+      "target": "Flight log",
+      "id": 1002,
+      "ts": 1791808592000,
+      "replay": true
+    },
+    {
+      "agent": "approach",
+      "kind": "fetch",
+      "text": "One intermediate account tops up 17 wallets before the pad opens.",
+      "missionId": "pad-rush",
+      "phase": "Tracing",
+      "delayMs": 17000,
+      "target": "Evidence strip",
+      "id": 1003,
+      "ts": 1791808605000,
+      "replay": true
+    },
+    {
+      "agent": "approach",
+      "kind": "fetch",
+      "text": "Trace funding source \u2192 intermediate route. Keep uncertain edges off the confirmed path.",
+      "missionId": "pad-rush",
+      "phase": "Reconstruction",
+      "delayMs": 11000,
+      "target": "Radar scope",
+      "missionUpdate": {
+        "stage": "Reconstruction",
+        "status": "active",
+        "lastSummary": "Trace funding source \u2192 intermediate route. Keep uncertain edges off the confirmed path."
+      },
+      "id": 1004,
+      "ts": 1791808618000,
+      "replay": true
+    },
+    {
+      "agent": "departure",
+      "kind": "thinking",
+      "text": "The first request sets the reference point for the whole timing log.",
+      "missionId": "pad-rush",
+      "phase": "Reconstruction",
+      "delayMs": 13000,
+      "id": 1005,
+      "ts": 1791808631000,
+      "replay": true
+    },
+    {
+      "agent": "radar",
+      "kind": "thinking",
+      "text": "Plot coordinated launch against shared funding service on TWR-001.",
+      "missionId": "pad-rush",
+      "phase": "Reconstruction",
+      "delayMs": 15000,
+      "id": 1006,
+      "ts": 1791808644000,
+      "replay": true
+    },
+    {
+      "agent": "fuel",
+      "kind": "result",
+      "text": "Seventeen wallets share one intermediate route.",
+      "missionId": "pad-rush",
+      "phase": "Reconstruction",
+      "delayMs": 17000,
+      "id": 1007,
+      "ts": 1791808657000,
+      "replay": true
+    },
+    {
+      "agent": "emergency",
+      "kind": "thinking",
+      "text": "Challenge TWR-001: Explains the common route without requiring a single owner.",
+      "missionId": "pad-rush",
+      "phase": "Review",
+      "delayMs": 11000,
+      "missionUpdate": {
+        "stage": "Review",
+        "status": "verifying",
+        "lastSummary": "Challenge TWR-001: Explains the common route without requiring a single owner."
+      },
+      "id": 1008,
+      "ts": 1791808670000,
+      "replay": true
+    },
+    {
+      "agent": "radar",
+      "kind": "result",
+      "text": "TWR-001 best fit: Coordinated launch at 64%. Fit ranks explanations; it does not name an owner.",
+      "missionId": "pad-rush",
+      "phase": "Review",
+      "delayMs": 13000,
+      "id": 1009,
+      "ts": 1791808683000,
+      "replay": true
+    },
+    {
+      "agent": "weather",
+      "kind": "draft",
+      "text": "Can the common route be explained by a shared funding service?",
+      "missionId": "pad-rush",
+      "phase": "Review",
+      "delayMs": 15000,
+      "id": 1010,
+      "ts": 1791808696000,
+      "replay": true
+    },
+    {
+      "agent": "fuel",
+      "kind": "verdict",
+      "text": "TWR-001 Held: The shared funding route is real. Common control is not established.",
+      "missionId": "pad-rush",
+      "phase": "Review",
+      "delayMs": 17000,
+      "target": "ground",
+      "verdict": "corrected",
+      "detail": "The shared funding route is real. Common control is not established.",
+      "missionUpdate": {
+        "stage": "Reviewed",
+        "status": "cooldown",
+        "lastSummary": "The shared funding route is real. Common control is not established.",
+        "confidence": 64
+      },
+      "id": 1011,
+      "ts": 1791808709000,
+      "replay": true
+    },
+    {
+      "agent": "chief",
+      "kind": "handoff",
+      "text": "Open TWR-002 / The Drain Lane. Start with the sequence; keep the owner question separate.",
+      "missionId": "drain-lane",
+      "phase": "Tracing",
+      "delayMs": 11000,
+      "target": "clearance",
+      "missionUpdate": {
+        "stage": "Tracing",
+        "status": "active",
+        "lastSummary": "Open TWR-002 / The Drain Lane. Start with the sequence; keep the owner question separate."
+      },
+      "id": 1012,
+      "ts": 1791808722000,
+      "replay": true
+    },
+    {
+      "agent": "clearance",
+      "kind": "thinking",
+      "text": "The flight boundary is 2 liquidity pulls \u00b7 1 sell window. Set a clean comparison before testing intent.",
+      "missionId": "drain-lane",
+      "phase": "Tracing",
+      "delayMs": 13000,
+      "id": 1013,
+      "ts": 1791808735000,
+      "replay": true
+    },
+    {
+      "agent": "ground",
+      "kind": "search",
+      "text": "Find the first independent signal in TWR-002: authority snapshot taken.",
+      "missionId": "drain-lane",
+      "phase": "Tracing",
+      "delayMs": 15000,
+      "target": "Flight log",
+      "id": 1014,
+      "ts": 1791808748000,
+      "replay": true
+    },
+    {
+      "agent": "departure",
+      "kind": "fetch",
+      "text": "The log records the pool configuration before any liquidity moves.",
+      "missionId": "drain-lane",
+      "phase": "Tracing",
+      "delayMs": 17000,
+      "target": "Evidence strip",
+      "id": 1015,
+      "ts": 1791808761000,
+      "replay": true
+    },
+    {
+      "agent": "approach",
+      "kind": "fetch",
+      "text": "Trace authority record \u2192 liquidity account. Keep uncertain edges off the confirmed path.",
+      "missionId": "drain-lane",
+      "phase": "Reconstruction",
+      "delayMs": 11000,
+      "target": "Radar scope",
+      "missionUpdate": {
+        "stage": "Reconstruction",
+        "status": "active",
+        "lastSummary": "Trace authority record \u2192 liquidity account. Keep uncertain edges off the confirmed path."
+      },
+      "id": 1016,
+      "ts": 1791808774000,
+      "replay": true
+    },
+    {
+      "agent": "departure",
+      "kind": "thinking",
+      "text": "The first withdrawal marks the start of the drain interval.",
+      "missionId": "drain-lane",
+      "phase": "Reconstruction",
+      "delayMs": 13000,
+      "id": 1017,
+      "ts": 1791808787000,
+      "replay": true
+    }
+  ],
+  "activitySequence": [
+    {
+      "agent": "radar",
+      "kind": "thinking",
+      "text": "Plot pre-positioned exit against automation trigger on TWR-002.",
+      "missionId": "drain-lane",
+      "phase": "Reconstruction",
+      "delayMs": 15000
+    },
+    {
+      "agent": "fuel",
+      "kind": "result",
+      "text": "Two paths precede the broader selling interval.",
+      "missionId": "drain-lane",
+      "phase": "Reconstruction",
+      "delayMs": 17000
+    },
+    {
+      "agent": "emergency",
+      "kind": "thinking",
+      "text": "Challenge TWR-002: Could produce the same order if a threshold rule fired first.",
+      "missionId": "drain-lane",
+      "phase": "Review",
+      "delayMs": 11000,
+      "missionUpdate": {
+        "stage": "Review",
+        "status": "verifying",
+        "lastSummary": "Challenge TWR-002: Could produce the same order if a threshold rule fired first."
+      }
+    },
+    {
+      "agent": "radar",
+      "kind": "result",
+      "text": "TWR-002 best fit: Pre-positioned exit at 72%. Fit ranks explanations; it does not name an owner.",
+      "missionId": "drain-lane",
+      "phase": "Review",
+      "delayMs": 13000
+    },
+    {
+      "agent": "weather",
+      "kind": "draft",
+      "text": "Do authority changes show a planned exit or an automated trigger?",
+      "missionId": "drain-lane",
+      "phase": "Review",
+      "delayMs": 15000
+    },
+    {
+      "agent": "fuel",
+      "kind": "verdict",
+      "text": "TWR-002 Mayday: Liquidity left before the sell wave. Why it left is still open.",
+      "missionId": "drain-lane",
+      "phase": "Review",
+      "delayMs": 17000,
+      "target": "clearance",
+      "verdict": "confirmed",
+      "detail": "Liquidity left before the sell wave. Why it left is still open.",
+      "missionUpdate": {
+        "stage": "Reviewed",
+        "status": "cooldown",
+        "lastSummary": "Liquidity left before the sell wave. Why it left is still open.",
+        "confidence": 72
+      }
+    },
+    {
+      "agent": "chief",
+      "kind": "handoff",
+      "text": "Open TWR-003 / The Mirror Loop. Start with the sequence; keep the owner question separate.",
+      "missionId": "mirror-loop",
+      "phase": "Tracing",
+      "delayMs": 11000,
+      "target": "departure",
+      "missionUpdate": {
+        "stage": "Tracing",
+        "status": "active",
+        "lastSummary": "Open TWR-003 / The Mirror Loop. Start with the sequence; keep the owner question separate."
+      }
+    },
+    {
+      "agent": "departure",
+      "kind": "thinking",
+      "text": "The flight boundary is 3 explanations \u00b7 one repeated route fingerprint. Set a clean comparison before testing intent.",
+      "missionId": "mirror-loop",
+      "phase": "Tracing",
+      "delayMs": 13000
+    },
+    {
+      "agent": "ground",
+      "kind": "search",
+      "text": "Find the first independent signal in TWR-003: route fingerprint captured.",
+      "missionId": "mirror-loop",
+      "phase": "Tracing",
+      "delayMs": 15000,
+      "target": "Flight log"
+    },
+    {
+      "agent": "departure",
+      "kind": "fetch",
+      "text": "The same instruction sequence becomes the comparison baseline.",
+      "missionId": "mirror-loop",
+      "phase": "Tracing",
+      "delayMs": 17000,
+      "target": "Evidence strip"
+    },
+    {
+      "agent": "approach",
+      "kind": "fetch",
+      "text": "Trace execution policy \u2192 route fingerprint. Keep uncertain edges off the confirmed path.",
+      "missionId": "mirror-loop",
+      "phase": "Reconstruction",
+      "delayMs": 11000,
+      "target": "Radar scope",
+      "missionUpdate": {
+        "stage": "Reconstruction",
+        "status": "active",
+        "lastSummary": "Trace execution policy \u2192 route fingerprint. Keep uncertain edges off the confirmed path."
+      }
+    },
+    {
+      "agent": "departure",
+      "kind": "thinking",
+      "text": "Matching boundaries suggest one execution path running again.",
+      "missionId": "mirror-loop",
+      "phase": "Reconstruction",
+      "delayMs": 13000
+    },
+    {
+      "agent": "radar",
+      "kind": "thinking",
+      "text": "Plot bot retry loop against route aggregation on TWR-003.",
+      "missionId": "mirror-loop",
+      "phase": "Reconstruction",
+      "delayMs": 15000
+    },
+    {
+      "agent": "fuel",
+      "kind": "result",
+      "text": "Repeated route records share the same execution boundary.",
+      "missionId": "mirror-loop",
+      "phase": "Reconstruction",
+      "delayMs": 17000
+    },
+    {
+      "agent": "emergency",
+      "kind": "thinking",
+      "text": "Challenge TWR-003: Could repeat part of the route while serving independent requests.",
+      "missionId": "mirror-loop",
+      "phase": "Review",
+      "delayMs": 11000,
+      "missionUpdate": {
+        "stage": "Review",
+        "status": "verifying",
+        "lastSummary": "Challenge TWR-003: Could repeat part of the route while serving independent requests."
+      }
+    },
+    {
+      "agent": "radar",
+      "kind": "result",
+      "text": "TWR-003 best fit: Bot retry loop at 79%. Fit ranks explanations; it does not name an owner.",
+      "missionId": "mirror-loop",
+      "phase": "Review",
+      "delayMs": 13000
+    },
+    {
+      "agent": "weather",
+      "kind": "draft",
+      "text": "Does the retry condition reproduce the repeated path without extra assumptions?",
+      "missionId": "mirror-loop",
+      "phase": "Review",
+      "delayMs": 15000
+    },
+    {
+      "agent": "fuel",
+      "kind": "verdict",
+      "text": "TWR-003 Diverted: A retry loop fits the instruction sequence best. Intent is unresolved.",
+      "missionId": "mirror-loop",
+      "phase": "Review",
+      "delayMs": 17000,
+      "target": "departure",
+      "verdict": "corrected",
+      "detail": "A retry loop fits the instruction sequence best. Intent is unresolved.",
+      "missionUpdate": {
+        "stage": "Reviewed",
+        "status": "cooldown",
+        "lastSummary": "A retry loop fits the instruction sequence best. Intent is unresolved.",
+        "confidence": 79
+      }
+    },
+    {
+      "agent": "chief",
+      "kind": "handoff",
+      "text": "Open TWR-004 / The Silent Hangar. Start with the sequence; keep the owner question separate.",
+      "missionId": "silent-hangar",
+      "phase": "Tracing",
+      "delayMs": 11000,
+      "target": "approach",
+      "missionUpdate": {
+        "stage": "Tracing",
+        "status": "active",
+        "lastSummary": "Open TWR-004 / The Silent Hangar. Start with the sequence; keep the owner question separate."
+      }
+    },
+    {
+      "agent": "approach",
+      "kind": "thinking",
+      "text": "The flight boundary is 3 outbound branches \u00b7 1 unresolved path. Set a clean comparison before testing intent.",
+      "missionId": "silent-hangar",
+      "phase": "Tracing",
+      "delayMs": 13000
+    },
+    {
+      "agent": "ground",
+      "kind": "search",
+      "text": "Find the first independent signal in TWR-004: intermediate account found.",
+      "missionId": "silent-hangar",
+      "phase": "Tracing",
+      "delayMs": 15000,
+      "target": "Flight log"
+    },
+    {
+      "agent": "approach",
+      "kind": "fetch",
+      "text": "The scope anchors on the account where the trail splits.",
+      "missionId": "silent-hangar",
+      "phase": "Tracing",
+      "delayMs": 17000,
+      "target": "Evidence strip"
+    },
+    {
+      "agent": "approach",
+      "kind": "fetch",
+      "text": "Trace origin wallet \u2192 intermediate account. Keep uncertain edges off the confirmed path.",
+      "missionId": "silent-hangar",
+      "phase": "Reconstruction",
+      "delayMs": 11000,
+      "target": "Radar scope",
+      "missionUpdate": {
+        "stage": "Reconstruction",
+        "status": "active",
+        "lastSummary": "Trace origin wallet \u2192 intermediate account. Keep uncertain edges off the confirmed path."
+      }
+    },
+    {
+      "agent": "departure",
+      "kind": "thinking",
+      "text": "The outgoing paths are logged independently.",
+      "missionId": "silent-hangar",
+      "phase": "Reconstruction",
+      "delayMs": 13000
+    },
+    {
+      "agent": "radar",
+      "kind": "thinking",
+      "text": "Plot common routing infrastructure against controlled fan-out on TWR-004.",
+      "missionId": "silent-hangar",
+      "phase": "Reconstruction",
+      "delayMs": 15000
+    },
+    {
+      "agent": "fuel",
+      "kind": "result",
+      "text": "The intermediate account sends the trail down three distinct paths.",
+      "missionId": "silent-hangar",
+      "phase": "Reconstruction",
+      "delayMs": 17000
+    },
+    {
+      "agent": "emergency",
+      "kind": "thinking",
+      "text": "Challenge TWR-004: Would need a separate control link for the unresolved branch.",
+      "missionId": "silent-hangar",
+      "phase": "Review",
+      "delayMs": 11000,
+      "missionUpdate": {
+        "stage": "Review",
+        "status": "verifying",
+        "lastSummary": "Challenge TWR-004: Would need a separate control link for the unresolved branch."
+      }
+    },
+    {
+      "agent": "radar",
+      "kind": "result",
+      "text": "TWR-004 best fit: Common routing infrastructure at 62%. Fit ranks explanations; it does not name an owner.",
+      "missionId": "silent-hangar",
+      "phase": "Review",
+      "delayMs": 13000
+    },
+    {
+      "agent": "weather",
+      "kind": "draft",
+      "text": "Can the third branch be connected through evidence independent of timing?",
+      "missionId": "silent-hangar",
+      "phase": "Review",
+      "delayMs": 15000
+    },
+    {
+      "agent": "fuel",
+      "kind": "verdict",
+      "text": "TWR-004 Held: Two branches are linked to known wallets. The third is not.",
+      "missionId": "silent-hangar",
+      "phase": "Review",
+      "delayMs": 17000,
+      "target": "approach",
+      "verdict": "confirmed",
+      "detail": "Two branches are linked to known wallets. The third is not.",
+      "missionUpdate": {
+        "stage": "Reviewed",
+        "status": "cooldown",
+        "lastSummary": "Two branches are linked to known wallets. The third is not.",
+        "confidence": 62
+      }
+    },
+    {
+      "agent": "chief",
+      "kind": "handoff",
+      "text": "Open TWR-005 / The Clean Departure. Start with the sequence; keep the owner question separate.",
+      "missionId": "clean-departure",
+      "phase": "Tracing",
+      "delayMs": 11000,
+      "target": "emergency",
+      "missionUpdate": {
+        "stage": "Tracing",
+        "status": "active",
+        "lastSummary": "Open TWR-005 / The Clean Departure. Start with the sequence; keep the owner question separate."
+      }
+    },
+    {
+      "agent": "emergency",
+      "kind": "thinking",
+      "text": "The flight boundary is 2 surviving explanations \u00b7 one public signal. Set a clean comparison before testing intent.",
+      "missionId": "clean-departure",
+      "phase": "Tracing",
+      "delayMs": 13000
+    },
+    {
+      "agent": "ground",
+      "kind": "search",
+      "text": "Find the first independent signal in TWR-005: public signal appears.",
+      "missionId": "clean-departure",
+      "phase": "Tracing",
+      "delayMs": 15000,
+      "target": "Flight log"
+    },
+    {
+      "agent": "ground",
+      "kind": "fetch",
+      "text": "The log records a signal anyone could see before the earliest entries.",
+      "missionId": "clean-departure",
+      "phase": "Tracing",
+      "delayMs": 17000,
+      "target": "Evidence strip"
+    },
+    {
+      "agent": "approach",
+      "kind": "fetch",
+      "text": "Trace public signal \u2192 early wallet a. Keep uncertain edges off the confirmed path.",
+      "missionId": "clean-departure",
+      "phase": "Reconstruction",
+      "delayMs": 11000,
+      "target": "Radar scope",
+      "missionUpdate": {
+        "stage": "Reconstruction",
+        "status": "active",
+        "lastSummary": "Trace public signal \u2192 early wallet a. Keep uncertain edges off the confirmed path."
+      }
+    },
+    {
+      "agent": "departure",
+      "kind": "thinking",
+      "text": "The timing is what first made the pattern look like inside knowledge.",
+      "missionId": "clean-departure",
+      "phase": "Reconstruction",
+      "delayMs": 13000
+    },
+    {
+      "agent": "radar",
+      "kind": "thinking",
+      "text": "Plot public arbitrage response against private coordination on TWR-005.",
+      "missionId": "clean-departure",
+      "phase": "Reconstruction",
+      "delayMs": 15000
+    },
+    {
+      "agent": "fuel",
+      "kind": "result",
+      "text": "A subset of wallets enters before the wider window.",
+      "missionId": "clean-departure",
+      "phase": "Reconstruction",
+      "delayMs": 17000
+    },
+    {
+      "agent": "emergency",
+      "kind": "thinking",
+      "text": "Challenge TWR-005: Needs an independent communication or control link.",
+      "missionId": "clean-departure",
+      "phase": "Review",
+      "delayMs": 11000,
+      "missionUpdate": {
+        "stage": "Review",
+        "status": "verifying",
+        "lastSummary": "Challenge TWR-005: Needs an independent communication or control link."
+      }
+    },
+    {
+      "agent": "radar",
+      "kind": "result",
+      "text": "TWR-005 best fit: Public arbitrage response at 81%. Fit ranks explanations; it does not name an owner.",
+      "missionId": "clean-departure",
+      "phase": "Review",
+      "delayMs": 13000
+    },
+    {
+      "agent": "weather",
+      "kind": "draft",
+      "text": "Does anything remain unusual once public arbitrage conditions are included?",
+      "missionId": "clean-departure",
+      "phase": "Review",
+      "delayMs": 15000
+    },
+    {
+      "agent": "fuel",
+      "kind": "verdict",
+      "text": "TWR-005 Cleared: The early entries are explained by a public signal. Nothing here blocks takeoff.",
+      "missionId": "clean-departure",
+      "phase": "Review",
+      "delayMs": 17000,
+      "target": "emergency",
+      "verdict": "confirmed",
+      "detail": "The early entries are explained by a public signal. Nothing here blocks takeoff.",
+      "missionUpdate": {
+        "stage": "Reviewed",
+        "status": "cooldown",
+        "lastSummary": "The early entries are explained by a public signal. Nothing here blocks takeoff.",
+        "confidence": 81
+      }
+    },
+    {
+      "agent": "chief",
+      "kind": "handoff",
+      "text": "Open TWR-006 / The Missed Approach. Start with the sequence; keep the owner question separate.",
+      "missionId": "missed-approach",
+      "phase": "Tracing",
+      "delayMs": 11000,
+      "target": "weather",
+      "missionUpdate": {
+        "stage": "Tracing",
+        "status": "active",
+        "lastSummary": "Open TWR-006 / The Missed Approach. Start with the sequence; keep the owner question separate."
+      }
+    },
+    {
+      "agent": "weather",
+      "kind": "thinking",
+      "text": "The flight boundary is authority history \u00b7 execution policy. Set a clean comparison before testing intent.",
+      "missionId": "missed-approach",
+      "phase": "Tracing",
+      "delayMs": 13000
+    },
+    {
+      "agent": "ground",
+      "kind": "search",
+      "text": "Find the first independent signal in TWR-006: policy baseline recorded.",
+      "missionId": "missed-approach",
+      "phase": "Tracing",
+      "delayMs": 15000,
+      "target": "Flight log"
+    },
+    {
+      "agent": "weather",
+      "kind": "fetch",
+      "text": "The log keeps the expected automation behavior for comparison.",
+      "missionId": "missed-approach",
+      "phase": "Tracing",
+      "delayMs": 17000,
+      "target": "Evidence strip"
+    },
+    {
+      "agent": "approach",
+      "kind": "fetch",
+      "text": "Trace policy baseline \u2192 authority history. Keep uncertain edges off the confirmed path.",
+      "missionId": "missed-approach",
+      "phase": "Reconstruction",
+      "delayMs": 11000,
+      "target": "Radar scope",
+      "missionUpdate": {
+        "stage": "Reconstruction",
+        "status": "active",
+        "lastSummary": "Trace policy baseline \u2192 authority history. Keep uncertain edges off the confirmed path."
+      }
+    },
+    {
+      "agent": "departure",
+      "kind": "thinking",
+      "text": "The observed sequence departs from the expected policy.",
+      "missionId": "missed-approach",
+      "phase": "Reconstruction",
+      "delayMs": 13000
+    },
+    {
+      "agent": "radar",
+      "kind": "thinking",
+      "text": "Plot failed automation against deliberate policy change on TWR-006.",
+      "missionId": "missed-approach",
+      "phase": "Reconstruction",
+      "delayMs": 15000
+    },
+    {
+      "agent": "fuel",
+      "kind": "result",
+      "text": "The final path differs from the policy baseline in the log.",
+      "missionId": "missed-approach",
+      "phase": "Reconstruction",
+      "delayMs": 17000
+    },
+    {
+      "agent": "emergency",
+      "kind": "thinking",
+      "text": "Challenge TWR-006: Requires a preceding authority or configuration change.",
+      "missionId": "missed-approach",
+      "phase": "Review",
+      "delayMs": 11000,
+      "missionUpdate": {
+        "stage": "Review",
+        "status": "verifying",
+        "lastSummary": "Challenge TWR-006: Requires a preceding authority or configuration change."
+      }
+    },
+    {
+      "agent": "radar",
+      "kind": "result",
+      "text": "TWR-006 best fit: Failed automation at 58%. Fit ranks explanations; it does not name an owner.",
+      "missionId": "missed-approach",
+      "phase": "Review",
+      "delayMs": 13000
+    },
+    {
+      "agent": "weather",
+      "kind": "draft",
+      "text": "Which authority change, if any, preceded the final execution trigger?",
+      "missionId": "missed-approach",
+      "phase": "Review",
+      "delayMs": 15000
+    },
+    {
+      "agent": "fuel",
+      "kind": "verdict",
+      "text": "TWR-006 Diverted: The log cannot yet tell a deliberate exit from a failed automation.",
+      "missionId": "missed-approach",
+      "phase": "Review",
+      "delayMs": 17000,
+      "target": "weather",
+      "verdict": "unverifiable",
+      "detail": "The log cannot yet tell a deliberate exit from a failed automation.",
+      "missionUpdate": {
+        "stage": "Reviewed",
+        "status": "cooldown",
+        "lastSummary": "The log cannot yet tell a deliberate exit from a failed automation.",
+        "confidence": 58
+      }
+    }
+  ],
+  "fuel": {
+    "chain": "solana",
+    "launchpad": null,
+    "mint": null,
+    "creatorWallet": null,
+    "solPriceUsd": null,
+    "unclaimedSol": 0,
+    "claimedSolTotal": 0,
+    "creditedUsdTotal": 0,
+    "spentUsdTotal": 0,
+    "fuelUsd": 84,
+    "burnUsdPerHour": 0,
+    "runwayHours": null,
+    "lastClaimAt": null,
+    "lastClaimTx": null,
+    "health": "running",
+    "rates": {
+      "model": "TOWER",
+      "inputPerMTok": 0,
+      "outputPerMTok": 0,
+      "cacheReadPerMTok": 0
+    }
+  },
+  "totals": {
+    "cases": 6,
+    "cycles": 42,
+    "searches": 128,
+    "reads": 164,
+    "drafts": 18,
+    "published": 12,
+    "refuted": 4,
+    "tokensIn": 0,
+    "tokensOut": 0,
+    "costUsd": 0
+  },
+  "token": {
+    "ca": null,
+    "symbol": "TOWER",
+    "name": "TOWER"
+  },
+  "quantum": {
+    "provider": "TOWER / AIRFIELD MAP",
+    "updatedAt": 1791808800000,
+    "budget": {
+      "plan": "tower",
+      "allowanceSec": 600,
+      "windowDays": 7,
+      "usedSec": 141,
+      "remainingSec": 459,
+      "reserveSec": 120,
+      "dailyCapSec": 85,
+      "usedTodaySec": 38,
+      "heldTodaySec": 0
+    },
+    "backends": [
+      {
+        "name": "airfield_a",
+        "qubits": 156,
+        "processor": "Path search",
+        "operational": true,
+        "pendingJobs": 3,
+        "twoQubitError": 0.06,
+        "readoutError": 0.02,
+        "t1Us": 0,
+        "t2Us": 0
+      },
+      {
+        "name": "airfield_b",
+        "qubits": 96,
+        "processor": "Route fit",
+        "operational": true,
+        "pendingJobs": 4,
+        "twoQubitError": 0.08499999999999999,
+        "readoutError": 0.02,
+        "t1Us": 0,
+        "t2Us": 0
+      },
+      {
+        "name": "airfield_c",
+        "qubits": 64,
+        "processor": "Cluster fit",
+        "operational": true,
+        "pendingJobs": 5,
+        "twoQubitError": 0.11,
+        "readoutError": 0.02,
+        "t1Us": 0,
+        "t2Us": 0
+      }
+    ],
+    "lattice": {
+      "backend": "airfield_a",
+      "coords": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          1,
+          15
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          11,
+          5
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          12,
+          4
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          13,
+          11
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          14,
+          6
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          14,
+          12
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          17
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          18
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          19
+        ],
+        [
+          16,
+          23
+        ],
+        [
+          17,
+          27
+        ],
+        [
+          18,
+          31
+        ],
+        [
+          19,
+          35
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          21,
+          22
+        ],
+        [
+          21,
+          36
+        ],
+        [
+          22,
+          23
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          24,
+          25
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          25,
+          37
+        ],
+        [
+          26,
+          27
+        ],
+        [
+          27,
+          28
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          29,
+          30
+        ],
+        [
+          29,
+          38
+        ],
+        [
+          30,
+          31
+        ],
+        [
+          31,
+          32
+        ],
+        [
+          32,
+          33
+        ],
+        [
+          33,
+          34
+        ],
+        [
+          33,
+          39
+        ],
+        [
+          34,
+          35
+        ],
+        [
+          36,
+          41
+        ],
+        [
+          37,
+          45
+        ],
+        [
+          38,
+          49
+        ],
+        [
+          39,
+          53
+        ],
+        [
+          40,
+          41
+        ],
+        [
+          41,
+          42
+        ],
+        [
+          42,
+          43
+        ],
+        [
+          43,
+          44
+        ],
+        [
+          43,
+          56
+        ],
+        [
+          44,
+          45
+        ],
+        [
+          45,
+          46
+        ],
+        [
+          46,
+          47
+        ],
+        [
+          47,
+          48
+        ],
+        [
+          47,
+          57
+        ],
+        [
+          48,
+          49
+        ],
+        [
+          49,
+          50
+        ],
+        [
+          50,
+          51
+        ],
+        [
+          51,
+          52
+        ],
+        [
+          51,
+          58
+        ],
+        [
+          52,
+          53
+        ],
+        [
+          53,
+          54
+        ],
+        [
+          54,
+          55
+        ],
+        [
+          55,
+          59
+        ],
+        [
+          56,
+          63
+        ],
+        [
+          57,
+          67
+        ],
+        [
+          58,
+          71
+        ],
+        [
+          59,
+          75
+        ],
+        [
+          60,
+          61
+        ],
+        [
+          61,
+          62
+        ],
+        [
+          61,
+          76
+        ],
+        [
+          62,
+          63
+        ],
+        [
+          63,
+          64
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          65,
+          77
+        ],
+        [
+          66,
+          67
+        ],
+        [
+          67,
+          68
+        ],
+        [
+          68,
+          69
+        ],
+        [
+          69,
+          70
+        ],
+        [
+          69,
+          78
+        ],
+        [
+          70,
+          71
+        ],
+        [
+          71,
+          72
+        ],
+        [
+          72,
+          73
+        ],
+        [
+          73,
+          74
+        ],
+        [
+          73,
+          79
+        ],
+        [
+          74,
+          75
+        ],
+        [
+          76,
+          81
+        ],
+        [
+          77,
+          85
+        ],
+        [
+          78,
+          89
+        ],
+        [
+          79,
+          93
+        ],
+        [
+          80,
+          81
+        ],
+        [
+          81,
+          82
+        ],
+        [
+          82,
+          83
+        ],
+        [
+          83,
+          84
+        ],
+        [
+          83,
+          96
+        ],
+        [
+          84,
+          85
+        ],
+        [
+          85,
+          86
+        ],
+        [
+          86,
+          87
+        ],
+        [
+          87,
+          88
+        ],
+        [
+          87,
+          97
+        ],
+        [
+          88,
+          89
+        ],
+        [
+          89,
+          90
+        ],
+        [
+          90,
+          91
+        ],
+        [
+          91,
+          92
+        ],
+        [
+          91,
+          98
+        ],
+        [
+          92,
+          93
+        ],
+        [
+          93,
+          94
+        ],
+        [
+          94,
+          95
+        ],
+        [
+          95,
+          99
+        ],
+        [
+          96,
+          103
+        ],
+        [
+          97,
+          107
+        ],
+        [
+          98,
+          111
+        ],
+        [
+          99,
+          115
+        ],
+        [
+          100,
+          101
+        ],
+        [
+          101,
+          102
+        ],
+        [
+          101,
+          116
+        ],
+        [
+          102,
+          103
+        ],
+        [
+          103,
+          104
+        ],
+        [
+          104,
+          105
+        ],
+        [
+          105,
+          106
+        ],
+        [
+          105,
+          117
+        ],
+        [
+          106,
+          107
+        ],
+        [
+          107,
+          108
+        ],
+        [
+          108,
+          109
+        ],
+        [
+          109,
+          110
+        ],
+        [
+          109,
+          118
+        ],
+        [
+          110,
+          111
+        ],
+        [
+          111,
+          112
+        ],
+        [
+          112,
+          113
+        ],
+        [
+          113,
+          114
+        ],
+        [
+          113,
+          119
+        ],
+        [
+          114,
+          115
+        ],
+        [
+          116,
+          121
+        ],
+        [
+          117,
+          125
+        ],
+        [
+          118,
+          129
+        ],
+        [
+          119,
+          133
+        ],
+        [
+          120,
+          121
+        ],
+        [
+          121,
+          122
+        ],
+        [
+          122,
+          123
+        ],
+        [
+          123,
+          124
+        ],
+        [
+          123,
+          136
+        ],
+        [
+          124,
+          125
+        ],
+        [
+          125,
+          126
+        ],
+        [
+          126,
+          127
+        ],
+        [
+          127,
+          128
+        ],
+        [
+          127,
+          137
+        ],
+        [
+          128,
+          129
+        ],
+        [
+          129,
+          130
+        ],
+        [
+          130,
+          131
+        ],
+        [
+          131,
+          132
+        ],
+        [
+          131,
+          138
+        ],
+        [
+          132,
+          133
+        ],
+        [
+          133,
+          134
+        ],
+        [
+          134,
+          135
+        ],
+        [
+          135,
+          139
+        ],
+        [
+          136,
+          143
+        ],
+        [
+          137,
+          147
+        ],
+        [
+          138,
+          151
+        ],
+        [
+          139,
+          155
+        ],
+        [
+          140,
+          141
+        ],
+        [
+          141,
+          142
+        ],
+        [
+          142,
+          143
+        ],
+        [
+          143,
+          144
+        ],
+        [
+          144,
+          145
+        ],
+        [
+          145,
+          146
+        ],
+        [
+          146,
+          147
+        ],
+        [
+          147,
+          148
+        ],
+        [
+          148,
+          149
+        ],
+        [
+          149,
+          150
+        ],
+        [
+          150,
+          151
+        ],
+        [
+          151,
+          152
+        ],
+        [
+          152,
+          153
+        ],
+        [
+          153,
+          154
+        ],
+        [
+          154,
+          155
+        ]
+      ]
+    },
+    "jobs": [
+      {
+        "id": "tw-plot-001",
+        "backend": "airfield_a",
+        "agent": "radar",
+        "missionId": "pad-rush",
+        "title": "PAD / competing funding paths",
+        "qubits": 8,
+        "layout": [
+          39,
+          52,
+          54,
+          53,
+          65,
+          66,
+          67,
+          78
+        ],
+        "depth": 128,
+        "twoQubitGates": 24,
+        "shots": 2048,
+        "status": "done",
+        "quantumSec": 12,
+        "submittedAt": 1791808560000,
+        "finishedAt": 1791808572000,
+        "top": [
+          {
+            "bits": "PATH A",
+            "p": 0.84
+          },
+          {
+            "bits": "PATH B",
+            "p": 0.10400000000000002
+          },
+          {
+            "bits": "PATH C",
+            "p": 0.05600000000000001
+          }
+        ],
+        "expected": "PATH A",
+        "headline": "Evidence fit",
+        "idealP": 0.95,
+        "measuredP": 0.64,
+        "note": "The shared funding route is real. Common control is not established. Next: Can the common route be explained by a shared funding service?",
+        "metrics": [
+          {
+            "label": "Funding sequence",
+            "measured": 0.64,
+            "ideal": 0.95
+          },
+          {
+            "label": "Instruction consistency",
+            "measured": 0.55,
+            "ideal": 0.95
+          },
+          {
+            "label": "Independent support",
+            "measured": 0.46,
+            "ideal": 0.9
+          }
+        ]
+      },
+      {
+        "id": "tw-plot-002",
+        "backend": "airfield_a",
+        "agent": "radar",
+        "missionId": "mirror-loop",
+        "title": "MIRROR / retry-path reconstruction",
+        "qubits": 6,
+        "layout": [
+          41,
+          42,
+          43,
+          56,
+          63,
+          64
+        ],
+        "depth": 192,
+        "twoQubitGates": 24,
+        "shots": 2048,
+        "status": "done",
+        "quantumSec": 16,
+        "submittedAt": 1791808320000,
+        "finishedAt": 1791808332000,
+        "top": [
+          {
+            "bits": "PATH A",
+            "p": 0.79
+          },
+          {
+            "bits": "PATH B",
+            "p": 0.13649999999999998
+          },
+          {
+            "bits": "PATH C",
+            "p": 0.07349999999999998
+          }
+        ],
+        "expected": "PATH A",
+        "headline": "Evidence fit",
+        "idealP": 0.95,
+        "measuredP": 0.79,
+        "note": "A retry loop fits the instruction sequence best. Intent is unresolved. Next: Does the retry condition reproduce the repeated path without extra assumptions?",
+        "metrics": [
+          {
+            "label": "Funding sequence",
+            "measured": 0.79,
+            "ideal": 0.95
+          },
+          {
+            "label": "Instruction consistency",
+            "measured": 0.7,
+            "ideal": 0.95
+          },
+          {
+            "label": "Independent support",
+            "measured": 0.61,
+            "ideal": 0.9
+          }
+        ]
+      },
+      {
+        "id": "tw-plot-003",
+        "backend": "airfield_a",
+        "agent": "radar",
+        "missionId": "silent-hangar",
+        "title": "HANGAR / unresolved branch search",
+        "qubits": 5,
+        "layout": [
+          20,
+          21,
+          22,
+          36,
+          41
+        ],
+        "depth": 256,
+        "twoQubitGates": 24,
+        "shots": 2048,
+        "status": "done",
+        "quantumSec": 20,
+        "submittedAt": 1791808080000,
+        "finishedAt": 1791808092000,
+        "top": [
+          {
+            "bits": "PATH A",
+            "p": 0.62
+          },
+          {
+            "bits": "PATH B",
+            "p": 0.24700000000000003
+          },
+          {
+            "bits": "PATH C",
+            "p": 0.13299999999999998
+          }
+        ],
+        "expected": "PATH A",
+        "headline": "Evidence fit",
+        "idealP": 0.95,
+        "measuredP": 0.62,
+        "note": "Two branches are linked to known wallets. The third is not. Next: Can the third branch be connected through evidence independent of timing?",
+        "metrics": [
+          {
+            "label": "Funding sequence",
+            "measured": 0.62,
+            "ideal": 0.95
+          },
+          {
+            "label": "Instruction consistency",
+            "measured": 0.53,
+            "ideal": 0.95
+          },
+          {
+            "label": "Independent support",
+            "measured": 0.44,
+            "ideal": 0.9
+          }
+        ]
+      }
+    ],
+    "jobsTotal": 3,
+    "secTotal": 48
+  },
+  "dossiers": [
+    {
+      "id": "pad-rush",
+      "code": "TWR-001",
+      "severity": "Held",
+      "confidence": 64,
+      "scope": "23 wallets \u00b7 8-second request window",
+      "assessment": "The shared funding route is real. Common control is not established.",
+      "nextQuestion": "Can the common route be explained by a shared funding service?",
+      "timeline": [
+        [
+          "T\u221218m",
+          "A funding route appears",
+          "One intermediate account tops up 17 wallets before the pad opens.",
+          "approach"
+        ],
+        [
+          "T+00s",
+          "The pad opens",
+          "The first request sets the reference point for the whole timing log.",
+          "ground"
+        ],
+        [
+          "T+08s",
+          "Twenty-three wallets queue",
+          "A narrow interval links the requests in time, not necessarily in ownership.",
+          "ground"
+        ],
+        [
+          "T+11m",
+          "The cluster is challenged",
+          "Service overlap remains a plausible reason for the shared route.",
+          "emergency"
+        ]
+      ],
+      "evidence": [
+        [
+          "Funding overlap",
+          "Supported",
+          "Seventeen wallets share one intermediate route."
+        ],
+        [
+          "Request timing",
+          "Supported",
+          "All 23 requests fall inside the same eight-second interval."
+        ],
+        [
+          "Independent wallets",
+          "Unresolved",
+          "Six wallets have no supported link to the shared route."
+        ]
+      ],
+      "hypotheses": [
+        [
+          "Coordinated launch",
+          "Working explanation",
+          "Explains funding overlap and timing, but needs independent evidence of common control.",
+          64
+        ],
+        [
+          "Shared funding service",
+          "Still plausible",
+          "Explains the common route without requiring a single owner.",
+          58
+        ],
+        [
+          "Timing coincidence",
+          "Weaker fit",
+          "Does not explain the earlier funding overlap on its own.",
+          24
+        ]
+      ],
+      "graph": [
+        "Funding source",
+        "Intermediate route",
+        "Cluster \u00b7 17",
+        "Other wallets \u00b7 6",
+        "Launch pool",
+        "Unresolved owner"
+      ],
+      "impact": "A coordinated rush can make a launch look more widely held than it is.",
+      "graphEdges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "unknownNode": 5,
+      "graphNotes": [
+        "One intermediate account tops up 17 wallets before the pad opens.",
+        "Seventeen wallets share one intermediate route.",
+        "All 23 requests fall inside the same eight-second interval.",
+        "A narrow interval links the requests in time, not necessarily in ownership.",
+        "Six wallets have no supported link to the shared route.",
+        "No independent ownership claim is attached to this node."
+      ],
+      "reconstruction": {
+        "question": "Can the common route be explained by a shared funding service?",
+        "result": "Coordinated launch is the current working explanation.",
+        "confidenceBefore": 48,
+        "confidenceAfter": 64,
+        "caveat": "Independent evidence is still required before naming an owner or a motive."
+      }
+    },
+    {
+      "id": "drain-lane",
+      "code": "TWR-002",
+      "severity": "Mayday",
+      "confidence": 72,
+      "scope": "2 liquidity pulls \u00b7 1 sell window",
+      "assessment": "Liquidity left before the sell wave. Why it left is still open.",
+      "nextQuestion": "Do authority changes show a planned exit or an automated trigger?",
+      "timeline": [
+        [
+          "T\u221204m",
+          "Authority snapshot taken",
+          "The log records the pool configuration before any liquidity moves.",
+          "departure"
+        ],
+        [
+          "T+00s",
+          "First pull",
+          "The first withdrawal marks the start of the drain interval.",
+          "clearance"
+        ],
+        [
+          "T+42s",
+          "Second pull",
+          "A second path removes liquidity before the wider selling begins.",
+          "clearance"
+        ],
+        [
+          "T+03m",
+          "The sell window opens",
+          "Broad selling starts only after the two recorded pulls.",
+          "fuel"
+        ]
+      ],
+      "evidence": [
+        [
+          "Pull sequence",
+          "Supported",
+          "Two paths precede the broader selling interval."
+        ],
+        [
+          "Authority history",
+          "Requested",
+          "The order of control changes is needed to tell the explanations apart."
+        ],
+        [
+          "Intent",
+          "Unresolved",
+          "Price movement and timing cannot establish motive."
+        ]
+      ],
+      "hypotheses": [
+        [
+          "Pre-positioned exit",
+          "Working explanation",
+          "Fits the ordering but needs evidence of a deliberate instruction.",
+          72
+        ],
+        [
+          "Automation trigger",
+          "Still plausible",
+          "Could produce the same order if a threshold rule fired first.",
+          61
+        ],
+        [
+          "Reactive withdrawal",
+          "Weaker fit",
+          "Would need a prior sell signal outside the recorded window.",
+          31
+        ]
+      ],
+      "graph": [
+        "Authority record",
+        "Liquidity account",
+        "Pull A",
+        "Pull B",
+        "Sell window",
+        "Trigger unknown"
+      ],
+      "impact": "Early liquidity removal changes the exit for everyone who arrives later.",
+      "graphEdges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "unknownNode": 5,
+      "graphNotes": [
+        "The log records the pool configuration before any liquidity moves.",
+        "Two paths precede the broader selling interval.",
+        "The order of control changes is needed to tell the explanations apart.",
+        "A second path removes liquidity before the wider selling begins.",
+        "Price movement and timing cannot establish motive.",
+        "No independent ownership claim is attached to this node."
+      ],
+      "reconstruction": {
+        "question": "Do authority changes show a planned exit or an automated trigger?",
+        "result": "Pre-positioned exit is the current working explanation.",
+        "confidenceBefore": 56,
+        "confidenceAfter": 72,
+        "caveat": "Independent evidence is still required before naming an owner or a motive."
+      }
+    },
+    {
+      "id": "mirror-loop",
+      "code": "TWR-003",
+      "severity": "Diverted",
+      "confidence": 79,
+      "scope": "3 explanations \u00b7 one repeated route fingerprint",
+      "assessment": "A retry loop fits the instruction sequence best. Intent is unresolved.",
+      "nextQuestion": "Does the retry condition reproduce the repeated path without extra assumptions?",
+      "timeline": [
+        [
+          "T+00s",
+          "Route fingerprint captured",
+          "The same instruction sequence becomes the comparison baseline.",
+          "departure"
+        ],
+        [
+          "T+12s",
+          "The fingerprint repeats",
+          "Matching boundaries suggest one execution path running again.",
+          "ground"
+        ],
+        [
+          "T+02m",
+          "Three paths are plotted",
+          "The scope compares retry, aggregation, and deliberate repetition.",
+          "radar"
+        ],
+        [
+          "T+06m",
+          "The claim is narrowed",
+          "The log records a retry-shaped pattern rather than alleging manipulation.",
+          "emergency"
+        ]
+      ],
+      "evidence": [
+        [
+          "Instruction fingerprint",
+          "Supported",
+          "Repeated route records share the same execution boundary."
+        ],
+        [
+          "Retry condition",
+          "Working lead",
+          "The loop explanation depends on the trigger reproducing the path."
+        ],
+        [
+          "Deliberate volume",
+          "Unresolved",
+          "Repetition alone does not establish an intent to inflate volume."
+        ]
+      ],
+      "hypotheses": [
+        [
+          "Bot retry loop",
+          "Working explanation",
+          "Explains repetition and the shared boundary with the fewest assumptions.",
+          79
+        ],
+        [
+          "Route aggregation",
+          "Still plausible",
+          "Could repeat part of the route while serving independent requests.",
+          52
+        ],
+        [
+          "Intentional repetition",
+          "Unresolved",
+          "Needs evidence beyond the instruction pattern.",
+          37
+        ]
+      ],
+      "graph": [
+        "Execution policy",
+        "Route fingerprint",
+        "Retry boundary",
+        "Repeated path",
+        "Route output",
+        "Intent unknown"
+      ],
+      "impact": "A repeated path can make activity look more varied than the code behind it.",
+      "graphEdges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "unknownNode": 5,
+      "graphNotes": [
+        "The same instruction sequence becomes the comparison baseline.",
+        "Repeated route records share the same execution boundary.",
+        "The loop explanation depends on the trigger reproducing the path.",
+        "The scope compares retry, aggregation, and deliberate repetition.",
+        "Repetition alone does not establish an intent to inflate volume.",
+        "No independent ownership claim is attached to this node."
+      ],
+      "reconstruction": {
+        "question": "Does the retry condition reproduce the repeated path without extra assumptions?",
+        "result": "Bot retry loop is the current working explanation.",
+        "confidenceBefore": 63,
+        "confidenceAfter": 79,
+        "caveat": "Independent evidence is still required before naming an owner or a motive."
+      }
+    },
+    {
+      "id": "silent-hangar",
+      "code": "TWR-004",
+      "severity": "Held",
+      "confidence": 62,
+      "scope": "3 outbound branches \u00b7 1 unresolved path",
+      "assessment": "Two branches are linked to known wallets. The third is not.",
+      "nextQuestion": "Can the third branch be connected through evidence independent of timing?",
+      "timeline": [
+        [
+          "T+00s",
+          "Intermediate account found",
+          "The scope anchors on the account where the trail splits.",
+          "approach"
+        ],
+        [
+          "T+03m",
+          "Three branches separate",
+          "The outgoing paths are logged independently.",
+          "approach"
+        ],
+        [
+          "T+07m",
+          "Two paths return to known wallets",
+          "Those branches link back to flights already on the board.",
+          "fuel"
+        ],
+        [
+          "T+12m",
+          "The unknown branch is isolated",
+          "The third branch becomes a request for evidence, not an assumed link.",
+          "weather"
+        ]
+      ],
+      "evidence": [
+        [
+          "Branch split",
+          "Supported",
+          "The intermediate account sends the trail down three distinct paths."
+        ],
+        [
+          "Return paths",
+          "Supported",
+          "Two branches connect to known wallets in the flight log."
+        ],
+        [
+          "Third branch owner",
+          "Unresolved",
+          "No independent ownership link is attached to the remaining path."
+        ]
+      ],
+      "hypotheses": [
+        [
+          "Common routing infrastructure",
+          "Working explanation",
+          "Explains the hop without merging every branch into one owner.",
+          62
+        ],
+        [
+          "Controlled fan-out",
+          "Still plausible",
+          "Would need a separate control link for the unresolved branch.",
+          49
+        ],
+        [
+          "Independent recipient",
+          "Still plausible",
+          "Fits the lack of an established link on the third branch.",
+          57
+        ]
+      ],
+      "graph": [
+        "Origin wallet",
+        "Intermediate account",
+        "Branch A",
+        "Branch B",
+        "Branch C \u00b7 unknown",
+        "Known wallets"
+      ],
+      "impact": "An unsupported merge would overstate who controls the outgoing funds.",
+      "graphEdges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "unknownNode": 4,
+      "graphNotes": [
+        "The scope anchors on the account where the trail splits.",
+        "The intermediate account sends the trail down three distinct paths.",
+        "Two branches connect to known wallets in the flight log.",
+        "Those branches link back to flights already on the board.",
+        "No independent ownership link is attached to the remaining path.",
+        "Two recorded branches return to wallets already on the board."
+      ],
+      "reconstruction": {
+        "question": "Can the third branch be connected through evidence independent of timing?",
+        "result": "Common routing infrastructure is the current working explanation.",
+        "confidenceBefore": 46,
+        "confidenceAfter": 62,
+        "caveat": "Independent evidence is still required before naming an owner or a motive."
+      }
+    },
+    {
+      "id": "clean-departure",
+      "code": "TWR-005",
+      "severity": "Cleared",
+      "confidence": 81,
+      "scope": "2 surviving explanations \u00b7 one public signal",
+      "assessment": "The early entries are explained by a public signal. Nothing here blocks takeoff.",
+      "nextQuestion": "Does anything remain unusual once public arbitrage conditions are included?",
+      "timeline": [
+        [
+          "T\u221202m",
+          "Public signal appears",
+          "The log records a signal anyone could see before the earliest entries.",
+          "ground"
+        ],
+        [
+          "T+00s",
+          "Early entries begin",
+          "The timing is what first made the pattern look like inside knowledge.",
+          "clearance"
+        ],
+        [
+          "T+04m",
+          "Arbitrage is tested",
+          "A public response reproduces the same entry order.",
+          "emergency"
+        ],
+        [
+          "T+09m",
+          "The flight is cleared",
+          "Neither red line nor hidden link survives the challenge.",
+          "chief"
+        ]
+      ],
+      "evidence": [
+        [
+          "Early entry order",
+          "Supported",
+          "A subset of wallets enters before the wider window."
+        ],
+        [
+          "Public information",
+          "Supported",
+          "An observable signal exists before the first recorded entry."
+        ],
+        [
+          "Private coordination",
+          "Unresolved",
+          "No evidence separates inside knowledge from a public response."
+        ]
+      ],
+      "hypotheses": [
+        [
+          "Public arbitrage response",
+          "Working explanation",
+          "Explains the early timing without any private information.",
+          81
+        ],
+        [
+          "Private coordination",
+          "Still plausible",
+          "Needs an independent communication or control link.",
+          38
+        ],
+        [
+          "Random entry order",
+          "Weaker fit",
+          "Does not explain the alignment with the public signal.",
+          22
+        ]
+      ],
+      "graph": [
+        "Public signal",
+        "Early wallet A",
+        "Early wallet B",
+        "Entry window",
+        "Pool response",
+        "Private link unknown"
+      ],
+      "impact": "Mistaking a public signal for inside knowledge would put a false mark on a clean flight.",
+      "graphEdges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "unknownNode": 5,
+      "graphNotes": [
+        "The log records a signal anyone could see before the earliest entries.",
+        "A subset of wallets enters before the wider window.",
+        "An observable signal exists before the first recorded entry.",
+        "A public response reproduces the same entry order.",
+        "No evidence separates inside knowledge from a public response.",
+        "No independent ownership claim is attached to this node."
+      ],
+      "reconstruction": {
+        "question": "Does anything remain unusual once public arbitrage conditions are included?",
+        "result": "Public arbitrage response is the current working explanation.",
+        "confidenceBefore": 65,
+        "confidenceAfter": 81,
+        "caveat": "Independent evidence is still required before naming an owner or a motive."
+      }
+    },
+    {
+      "id": "missed-approach",
+      "code": "TWR-006",
+      "severity": "Diverted",
+      "confidence": 58,
+      "scope": "Authority history \u00b7 execution policy",
+      "assessment": "The log cannot yet tell a deliberate exit from a failed automation.",
+      "nextQuestion": "Which authority change, if any, preceded the final execution trigger?",
+      "timeline": [
+        [
+          "T\u221206m",
+          "Policy baseline recorded",
+          "The log keeps the expected automation behavior for comparison.",
+          "weather"
+        ],
+        [
+          "T+00s",
+          "Unexpected exit path",
+          "The observed sequence departs from the expected policy.",
+          "departure"
+        ],
+        [
+          "T+05m",
+          "Authority history requested",
+          "Control changes become the next decisive record.",
+          "fuel"
+        ],
+        [
+          "T+10m",
+          "Review boundary published",
+          "The tower records exactly what would separate the explanations.",
+          "chief"
+        ]
+      ],
+      "evidence": [
+        [
+          "Execution departure",
+          "Supported",
+          "The final path differs from the policy baseline in the log."
+        ],
+        [
+          "Control changes",
+          "Requested",
+          "Authority history is needed to establish who could change the policy."
+        ],
+        [
+          "Trigger origin",
+          "Unresolved",
+          "A deliberate command and a failed trigger both remain possible."
+        ]
+      ],
+      "hypotheses": [
+        [
+          "Failed automation",
+          "Working explanation",
+          "Fits the departure if the policy trigger fired incorrectly.",
+          58
+        ],
+        [
+          "Deliberate policy change",
+          "Still plausible",
+          "Requires a preceding authority or configuration change.",
+          53
+        ],
+        [
+          "External route failure",
+          "Weaker fit",
+          "Needs an independent failure record at the route boundary.",
+          33
+        ]
+      ],
+      "graph": [
+        "Policy baseline",
+        "Authority history",
+        "Execution trigger",
+        "Exit path",
+        "Final recipient",
+        "Change unknown"
+      ],
+      "impact": "The same exit path can have different causes and need different responses.",
+      "graphEdges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "unknownNode": 5,
+      "graphNotes": [
+        "The log keeps the expected automation behavior for comparison.",
+        "The final path differs from the policy baseline in the log.",
+        "Authority history is needed to establish who could change the policy.",
+        "Control changes become the next decisive record.",
+        "A deliberate command and a failed trigger both remain possible.",
+        "No independent ownership claim is attached to this node."
+      ],
+      "reconstruction": {
+        "question": "Which authority change, if any, preceded the final execution trigger?",
+        "result": "Failed automation is the current working explanation.",
+        "confidenceBefore": 42,
+        "confidenceAfter": 58,
+        "caveat": "Independent evidence is still required before naming an owner or a motive."
+      }
+    }
+  ]
+}

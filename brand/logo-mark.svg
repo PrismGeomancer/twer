@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="TOWER mark"><title>TOWER mark</title><circle cx="64" cy="64" r="56" fill="none" stroke="#ff6a13" stroke-width="5"/>
+<path d="M64 64 L64 8 A56 56 0 0 0 15.5 36 Z" fill="#ff6a13" opacity=".35"/>
+<rect x="46" y="34" width="36" height="5" fill="#ffffff"/>
+<polygon points="50,39 78,39 84,56 44,56" fill="#ff6a13"/>
+<rect x="52" y="44" width="24" height="5" fill="#0b0b0b"/>
+<rect x="60" y="56" width="8" height="40" fill="#ffffff"/>
+<rect x="48" y="96" width="32" height="5" fill="#ffffff"/>
+<line x1="64" y1="34" x2="64" y2="25" stroke="#ffffff" stroke-width="3"/>
+<circle cx="64" cy="22" r="3.5" fill="#ff6a13"/></svg>
